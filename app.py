@@ -12,29 +12,6 @@ institution = "University of KwaZulu-Natal, Westville"
 # Create 2 columns
 clmn1, clmn2 = st.columns(2,  vertical_alignment="bottom")
 
-# Create a vertical divider for your columns
-def vertical_divider(color="gray"):
-    """
-    Creates a vertical divider in Streamlit that matches column height
-    
-    Parameters:
-        color (str): Color of the divider line
-    """
-    # Using markdown with CSS to create full-height vertical divider
-    st.markdown(
-        f"""
-        <div style="
-            width: 2px;
-            height: 100%;
-            background-color: {color};
-            margin: 0 auto;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-        "></div>
-        """,
-        unsafe_allow_html=True
-    )
 
 with clmn1:
     # Display basic profile information
@@ -42,10 +19,12 @@ with clmn1:
     st.write(f"**Name:** {name}")
     st.write(f"**Field of Research:** {field}")
     st.write(f"**Institution:** {institution}")
-    vertical_divider()
 
+from PIL import Image
 with clmn2:
-    st.image("gardens.jpg")
+    image = Image.open("gardens.jpg")
+    rotated_image = image.rotate(-90)
+    st.image(rotated_image)
 
 st.divider()
 
