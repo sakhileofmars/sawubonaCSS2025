@@ -23,7 +23,7 @@ with clmn1:
 from PIL import Image
 with clmn2:
     image = Image.open("gardens.jpg")
-    rotated_image = image.rotate(-90)
+    rotated_image = image.rotate(90)
     st.image(rotated_image)
 
 st.divider()
