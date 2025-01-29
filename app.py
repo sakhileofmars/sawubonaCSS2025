@@ -10,7 +10,7 @@ field = "Astronomy/Astrophysics"
 institution = "University of KwaZulu-Natal, Westville"
 
 # Create 2 columns
-clmn1, clmn2 = st.columns(2)
+clmn1, clmn2 = st.columns([1, 1])
 
 
 with clmn1:
